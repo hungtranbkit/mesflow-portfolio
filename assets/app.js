@@ -26,10 +26,20 @@ return '<a href="#main" class="skip-link">Bỏ qua điều hướng</a>'+
 function footer(){return '<footer class="site-footer"><div class="container footer-grid"><div><strong style="font:700 17px Space Grotesk">HUNG TRAN / MESFLOW LAB</strong><div style="margin-top:5px"><small>Portfolio sản phẩm, kỹ thuật và nghiên cứu · © '+new Date().getFullYear()+'</small></div></div>'+
 '<div class="footer-links"><a href="'+path("#work")+'">Dự án</a><a href="'+path("#about")+'">Profile</a><a href="'+ZALO+'" target="_blank" rel="noopener noreferrer">Zalo liên hệ ↗</a><a href="'+GH+'" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></footer>'}
 function art(p,index){
-var heights=[34,62,44,75,58,92,66,84,72,49];var rows=[77,42,92,64].map(function(n,i){return '<div class="mock-row"><i class="mock-label"></i><div class="mock-track"><i style="width:'+n+'%"></i></div><i class="mock-chip"></i></div>'}).join("");
-var bars=heights.map(function(n){return '<i style="height:'+n+'%"></i>'}).join("");
-return '<div class="project-art art--'+a(p.category)+'" aria-hidden="true"><div class="art-noise"></div><div class="art-top-label">MESFLOW / '+a(p.visual)+'</div><div class="art-number">0'+String((index||0)%9+1)+'</div>'+
-'<div class="art-window"><div class="window-top"><i></i><i></i><i></i><b>'+a(p.name.toUpperCase())+'</b></div><div class="window-body"><div class="mock-cardbar">'+bars+'</div>'+rows+'<div class="mock-content-grid"><i></i><i></i><i></i></div></div></div><div class="art-orb">'+a(p.visual)+'</div></div>'}
+var screenshots=Array.isArray(p.screenshots)?p.screenshots:[];
+if(screenshots.length){
+  var shot=screenshots[0];
+  var kind=shot.kind==="public_demo"?"WEBSITE PUBLIC":"BẰNG CHỨNG KIỂM THỬ";
+  return '<div class="project-art ui-screenshot">'+
+  '<img src="'+a(path(shot.src))+'" alt="'+a(shot.caption||("Ảnh giao diện "+p.name))+'" loading="lazy" decoding="async">'+
+  '<div class="ui-photo-tag"><span class="ui-photo-dot" aria-hidden="true"></span>Ảnh giao diện · '+kind+'</div></div>';
+}
+return '<div class="project-art ui-unavailable art--'+a(p.category)+'">'+
+'<div class="ui-unavailable-grid" aria-hidden="true"></div>'+
+'<div class="ui-unavailable-icon" aria-hidden="true">'+a(p.visual)+'</div>'+
+'<div class="ui-unavailable-copy"><strong>Chưa có ảnh giao diện công khai</strong><small>Dự án '+a(p.phaseLabel.toLowerCase())+' · xem giới thiệu bên dưới</small></div></div>';
+}
+
 function projectCard(p,i,featured){
 return '<article class="project-card '+(featured?'feature-card':'catalog-card')+'">'+
 '<a href="'+detailPath(p)+'" aria-label="Chi tiết '+a(p.name)+'">'+art(p,i)+'</a>'+
@@ -43,18 +53,45 @@ function contact(){return '<section class="contact-section" id="contact"><div cl
 function home(ps){
 var feature=ps.filter(function(p){return p.featured});
 var categories=cats.map(function(c){var count=c[0]==="all"?ps.length:ps.filter(function(p){return p.category===c[0]}).length;return '<button type="button" class="filter '+(c[0]==="all"?"active":"")+'" data-filter="'+c[0]+'" aria-pressed="'+(c[0]==="all")+'">'+c[1]+' <span style="opacity:.6">('+count+')</span></button>'}).join("");
-var h='<main id="main"><section class="hero"><div class="container hero-grid"><div class="hero-left"><div class="hero-pill"><span class="bullet"></span> PRODUCT ENGINEERING / VIETNAM</div><h1>Biến bài toán<br>thực tế thành<br><span class="highlight">sản phẩm số.</span></h1><p class="hero-description">Portfolio của Hùng Trần: những sản phẩm đã xây dựng và đang phát triển trong sản xuất, bán lẻ, bất động sản, AI và kỹ thuật. Tập trung vào tính hữu ích, khả năng vận hành và chiều sâu công nghệ.</p><div class="hero-cta"><a class="button" href="#work">Khám phá dự án <span class="arrow">↗</span></a><a class="button-outline" href="#about">Hồ sơ năng lực <span class="arrow">↗</span></a></div><div class="hero-note"><strong>'+ps.length+' dự án chọn lọc</strong><span class="note-line"></span><span>5 nhóm giải pháp · Bản demo tương tác</span></div></div>'+
+var h='<main id="main"><section class="hero"><div class="container hero-grid"><div class="hero-left"><div class="hero-pill"><span class="bullet"></span> PRODUCT ENGINEERING / VIETNAM</div><h1>Biến bài toán<br>thực tế thành<br><span class="highlight">sản phẩm số.</span></h1><p class="hero-description">Portfolio của Hùng Trần: những sản phẩm đã xây dựng và đang phát triển trong sản xuất, bán lẻ, bất động sản, AI và kỹ thuật. Tập trung vào tính hữu ích, khả năng vận hành và chiều sâu công nghệ.</p><div class="hero-cta"><a class="button" href="#work">Khám phá dự án <span class="arrow">↗</span></a><a class="button-outline" href="#about">Hồ sơ năng lực <span class="arrow">↗</span></a></div><div class="hero-note"><strong>'+ps.length+' dự án chọn lọc</strong><span class="note-line"></span><span>5 nhóm giải pháp · Ảnh giao diện thật & demo</span></div></div>'+
 '<div class="hero-stage" aria-label="Hình minh họa hệ sinh thái phần mềm"><div class="stage-grid"></div><div class="stage-top"><span>H / PRODUCT OPERATING SYSTEM</span><span class="online">BUILT TO SOLVE</span></div><div class="stage-main"><div class="stage-ui-top"><span class="stage-ui-title">Operations overview</span><span class="stage-dots"><i></i><i></i><i></i></span></div><div class="stage-controls"><div class="stage-metric"><small>WORKFLOWS</small><strong>08</strong></div><div class="stage-metric"><small>SYSTEMS</small><strong>05</strong></div><div class="stage-metric"><small>ITERATIONS</small><strong>∞</strong></div></div><div class="stage-graph">'+[28,47,37,64,49,73,62,94,72,83,69,99].map(function(h){return '<i style="height:'+h+'%"></i>'}).join("")+'</div></div><div class="stage-float"><small>PORTFOLIO / 2026</small><strong>Build what matters ↗</strong></div><div class="stage-side">SOFTWARE × AI × ENGINEERING</div></div></div></section>'+
 '<div class="trust-strip"><div class="container trust-inner"><span class="micro">LĨNH VỰC TRIỂN KHAI</span><div class="trust-tags"><span>Sản xuất</span><span>Bán lẻ</span><span>PropertyTech</span><span>AI / Automation</span><span>R&D</span></div></div></div>'+
 '<section class="section" id="featured"><div class="container"><div class="section-head"><div><div class="section-label eyebrow">SELECTED WORK / 01</div><h2>Các sản phẩm nổi bật.</h2></div><p>Những hướng đi chính trong hệ sinh thái — từ hệ thống nghiệp vụ đến hạ tầng AI và công cụ hỗ trợ.</p></div><div class="feature-grid">'+feature.map(function(p,i){return projectCard(p,i,true)}).join("")+'</div></div></section>'+
 '<section class="section catalog-section" id="work"><div class="container"><div class="section-head"><div><div class="section-label eyebrow">PROJECT DIRECTORY / 02</div><h2>Khám phá toàn bộ dự án.</h2></div><p>Lọc theo lĩnh vực, xem câu chuyện của từng sản phẩm và thử demo mô phỏng ngay trên trình duyệt.</p></div><div class="catalog-toolbar"><div class="filters" role="group" aria-label="Lọc theo lĩnh vực">'+categories+'</div><label class="search-wrap"><span class="sr-only">Tìm dự án</span><input id="project-search" type="search" aria-label="Tìm dự án" placeholder="Tìm tên, lĩnh vực, công nghệ..." autocomplete="off"></label></div><div id="catalog-count" class="catalog-count" role="status"></div><div id="project-grid" class="catalog-grid"></div></div></section>'+approach()+about()+contact()+'</main>';
 return header()+h+footer()
 }
+function screenshotGallery(p){
+var shots=Array.isArray(p.screenshots)?p.screenshots:[];
+if(!shots.length){
+return '<section class="screen-gallery no-screenshots"><div class="container">'+
+'<div class="section-label eyebrow">PRODUCT SCREENSHOTS</div>'+
+'<h2 class="subheading">Ảnh giao diện thực tế</h2>'+
+'<div class="screens-empty"><span class="screens-empty-icon" aria-hidden="true">▧</span>'+
+'<div><strong>Chưa có ảnh giao diện được xác minh để công bố.</strong>'+
+'<p>Dự án có thể đang phát triển, chạy nội bộ hoặc chưa có giao diện. Portfolio sẽ không dùng bản vẽ minh họa như ảnh sản phẩm thật.</p></div></div></div></section>';
+}
+var items=shots.map(function(shot,i){
+var src=a(path(shot.src));
+return '<figure class="screen-figure">'+
+'<a href="'+src+'" target="_blank" rel="noopener noreferrer" title="Mở ảnh đầy đủ: '+a(shot.caption)+'">'+
+'<img src="'+src+'" alt="'+a(shot.caption)+'" loading="lazy" decoding="async">'+
+'<span class="screen-open" aria-hidden="true">↗ Xem ảnh đầy đủ</span></a>'+
+'<figcaption><strong>'+a(shot.caption)+'</strong>'+
+'<div class="screen-source">'+a(shot.source)+' · '+(shot.kind==="public_demo"?"Website public":"Ảnh kiểm thử")+'</div>'+
+'<p>'+a(shot.note||"Ảnh chụp giao diện, không phải dữ liệu sản xuất.")+'</p></figcaption></figure>';
+}).join("");
+return '<section class="screen-gallery" id="screenshots"><div class="container">'+
+'<div class="section-head"><div><div class="section-label eyebrow">REAL INTERFACE / SCREENSHOTS</div>'+
+'<h2>Giao diện thật của dự án.</h2></div><p>'+shots.length+' ảnh từ website công khai hoặc bằng chứng kiểm thử. Chọn ảnh để xem nguyên bản.</p></div>'+
+'<div class="screens-grid '+(shots.length===1?'screens-single':'')+'">'+items+'</div></div></section>';
+}
+
 function detail(p,ps){
 var related=ps.filter(function(x){return x.category===p.category&&x.slug!==p.slug}).slice(0,3);
 var tech=p.stack.map(function(x){return '<span>'+e(x)+'</span>'}).join("");
 var timeline=p.steps.map(function(x,i){return '<div class="timeline-item"><span>0'+(i+1)+' / STEP</span><strong>'+e(x)+'</strong></div>'}).join("");
 return header()+'<main id="main"><section class="detail-hero"><div class="container"><div class="detail-breadcrumb"><a href="'+path("")+'">Trang chủ</a><span>/</span><a href="'+path("#work")+'">Dự án</a><span>/</span><span>'+e(p.name)+'</span></div><div class="detail-grid"><div class="detail-copy"><div class="eyebrow">'+e(p.categoryLabel)+' / CASE STUDY</div><h1>'+e(p.name)+'<span style="color:var(--blue)">.</span></h1><p class="detail-tagline">'+e(p.tagline)+'</p><p class="detail-description">'+e(p.description)+'</p><div class="detail-badges"><span>'+e(p.phaseLabel)+'</span><span>'+e(p.categoryLabel)+'</span><span>Demo mẫu có thể thử</span></div><div class="detail-buttons"><a class="button" href="'+demoPath(p)+'">Trải nghiệm demo <span class="arrow">↗</span></a>'+external(p)+'</div></div><div class="detail-visual">'+art(p,0)+'</div></div></div></section>'+
+screenshotGallery(p)+
 '<section class="detail-sections"><div class="container"><div class="detail-columns"><div><div class="section-label eyebrow">THE CONTEXT</div><h2 class="subheading">Tại sao dự án này<br>được xây dựng?</h2><p>'+e(p.description)+'</p><div class="micro" style="margin-top:35px;color:#668071">NỀN TẢNG KỸ THUẬT</div><div class="tech-list">'+tech+'</div></div><div><div class="section-label eyebrow">THE SOLUTION</div><h2 class="subheading">Năng lực chính</h2><ul class="capability-list">'+p.capabilities.map(function(x){return '<li>'+e(x)+'</li>'}).join("")+'</ul></div></div><div style="margin-top:70px"><div class="section-label eyebrow">HOW IT WORKS</div><h2 class="subheading">Một luồng sử dụng điển hình</h2><p class="muted" style="font-size:13px">Các bước bên dưới là kịch bản minh họa để hiểu cách giải pháp hoạt động.</p><div class="timeline">'+timeline+'</div></div></div></section>'+
 '<section class="detail-bottom"><div class="container"><div class="detail-bottom-inner"><div><div class="eyebrow" style="color:#c8d7ff">EXPERIENCE THE FLOW</div><h2>Đừng chỉ đọc. Hãy thử.</h2><p>Demo tương tác dùng dữ liệu giả lập và có nút đặt lại, không kết nối hệ thống hoặc dữ liệu khách hàng thật.</p></div><a class="button-light" href="'+demoPath(p)+'">Mở demo '+e(p.name)+' <span class="arrow">↗</span></a></div></div></section></main>'+
 more(related)+footer()

@@ -49,3 +49,10 @@ No internal login flow is exposed. External product URLs only when established. 
 - Corrected the two first auto-discovered project summaries into grounded Vietnamese copy, including an explicit non-production warning for Kiosk Runtime v2.
 - README parser now prioritizes Purpose / Overview headings to avoid treating tool-usage instructions as product descriptions.
 - Re-run the daily workflow after merging updates to publish the new content.
+
+## Verified UI screenshot gallery (2026-10-10)
+- 16 vetted PNG screenshots mapped through data/projects.json screenshots[] on 13/27 projects.
+- Cards and case-study hero display real images, with a full-resolution gallery per project; missing photos have an explicit placeholder, not generated app UI.
+- Each image has descriptive provenance; screenshots from private project evidence were reviewed to avoid confidential information. No private repo URLs are exposed.
+- scripts/check_site.py validates PNG signature, local path, caption, source and type; GitHub Pages serves images from assets/screenshots.
+- Remaining 14 projects without verified images listed in docs/SCREENSHOTS.md. Automatic daily repo sync will not extract or publish private screenshots without review.

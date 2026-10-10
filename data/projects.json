@@ -27,6 +27,15 @@
       "Python",
       "PostgreSQL",
       "QR / Kiosk"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/mesflow.png",
+        "caption": "MESFlow — website public với dashboard demo",
+        "source": "Website công khai: mesflow.net",
+        "kind": "public_demo",
+        "note": "Bảng chỉ số trên trang giới thiệu sử dụng dữ liệu demo, không phải production."
+      }
     ]
   },
   {
@@ -58,6 +67,22 @@
       "React",
       "SQLite",
       "PostgreSQL"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/novaretail.png",
+        "caption": "NovaRetail — luồng đơn bán hàng trong bản thử nghiệm",
+        "source": "Bằng chứng UI từ kiểm thử E2E",
+        "kind": "test_evidence",
+        "note": "Ảnh chụp bản thử nghiệm V3 với dữ liệu mẫu; phiên bản sản phẩm có thể đã thay đổi."
+      },
+      {
+        "src": "assets/screenshots/novaretail-landing.png",
+        "caption": "NovaRetail — website giới thiệu sản phẩm",
+        "source": "Website công khai: novaretail.mesflow.net",
+        "kind": "public_demo",
+        "note": "Website giới thiệu sản phẩm, có minh họa giao diện ứng dụng."
+      }
     ]
   },
   {
@@ -89,6 +114,22 @@
       "React",
       "PostgreSQL",
       "AI Search"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/propertyiq.png",
+        "caption": "PropertyIQ — giao diện tìm kiếm tin thị trường",
+        "source": "Website công khai: propertyiq.mesflow.net",
+        "kind": "public_demo",
+        "note": "Chụp trang Thị trường; số lượng tin phụ thuộc nguồn dữ liệu và thời điểm."
+      },
+      {
+        "src": "assets/screenshots/propertyiq-valuation.png",
+        "caption": "PropertyIQ — bảng định giá so sánh",
+        "source": "Bằng chứng kiểm thử giao diện",
+        "kind": "test_evidence",
+        "note": "Sử dụng tài sản và số liệu tổng hợp giả lập; không phải kết quả định giá thực tế."
+      }
     ]
   },
   {
@@ -119,6 +160,22 @@
       "Chrome Extension",
       "JavaScript",
       "Browser Storage"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/hint.png",
+        "caption": "Hint — viết hướng dẫn ngay trên biểu mẫu",
+        "source": "Ảnh demo tiện ích Chrome",
+        "kind": "test_evidence",
+        "note": "Các biểu mẫu và nội dung là ví dụ thử nghiệm."
+      },
+      {
+        "src": "assets/screenshots/hint-landing.png",
+        "caption": "Hint — trang giới thiệu và minh họa chức năng",
+        "source": "Website công khai: hint.mesflow.net",
+        "kind": "public_demo",
+        "note": "Ảnh chụp website công khai; biểu mẫu bên phải là tình huống demo."
+      }
     ]
   },
   {
@@ -149,6 +206,15 @@
       "Next.js",
       "TypeScript",
       "Architecture Blueprint"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/novafactory.png",
+        "caption": "NovaFactory — màn hình quản lý dự án và module",
+        "source": "Ảnh giao diện từ bản showcase",
+        "kind": "test_evidence",
+        "note": "Hệ thống demo/preview, các chỉ số và blueprint không phải khách hàng production."
+      }
     ]
   },
   {
@@ -179,6 +245,15 @@
       "Python",
       "TypeScript",
       "API Gateway"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/ai-gateway.png",
+        "caption": "AI Gateway — module Hội đồng thiết kế đa tác nhân",
+        "source": "Ảnh tính năng được kiểm thử",
+        "kind": "test_evidence",
+        "note": "Đây là một tính năng của hệ thống AI Gateway, không phải toàn bộ màn hình gateway."
+      }
     ]
   },
   {
@@ -209,6 +284,15 @@
       "Crawler",
       "Python",
       "Maps"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/bdsdaknong.png",
+        "caption": "BĐS Đắk Nông — trang khám phá tin đăng",
+        "source": "Ảnh chụp giao diện public trước đây",
+        "kind": "test_evidence",
+        "note": "Website hiện có bảo vệ truy cập; dữ liệu hiển thị trong ảnh không phải giá đã xác minh."
+      }
     ]
   },
   {
@@ -239,6 +323,15 @@
       "TypeScript",
       "Python",
       "PostgreSQL"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/customer-ai.png",
+        "caption": "Customer AI — trang giới thiệu tích hợp demo chat",
+        "source": "Website công khai: lab.mesflow.net",
+        "kind": "public_demo",
+        "note": "Ảnh chụp trang giới thiệu; chức năng chat demo nằm trong trang này."
+      }
     ]
   },
   {
@@ -269,6 +362,15 @@
       "FastAPI",
       "SQLite",
       "Crawler"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/jobradar.png",
+        "caption": "JobRadar — trang tìm kiếm việc làm",
+        "source": "Bằng chứng giao diện public",
+        "kind": "test_evidence",
+        "note": "Tin tuyển dụng đến từ nguồn công khai, nội dung và số lượng có thể thay đổi."
+      }
     ]
   },
   {
@@ -299,6 +401,15 @@
       "TypeScript",
       "PostgreSQL",
       "Worker"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/chon-do-thong-minh.png",
+        "caption": "Chọn Đồ Thông Minh — bảng quản trị danh mục",
+        "source": "Bằng chứng kiểm thử giao diện",
+        "kind": "test_evidence",
+        "note": "Môi trường demo/kiểm thử; trạng thái tích hợp sàn không được bảo đảm."
+      }
     ]
   },
   {
@@ -329,7 +440,8 @@
       "SQLite",
       "PostgreSQL",
       "CouchDB"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "qr-restaurant",
@@ -359,7 +471,8 @@
       "Next.js",
       "Prisma",
       "PostgreSQL"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "gia-pha",
@@ -389,7 +502,8 @@
       "Next.js",
       "React Flow",
       "TypeScript"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "esp32-kiosk",
@@ -419,7 +533,8 @@
       "ESP32-S3",
       "C++",
       "HTTPS"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "ai-qc-agent",
@@ -449,7 +564,8 @@
       "Python",
       "Playwright",
       "AI Agents"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "mesflow-qa",
@@ -479,6 +595,15 @@
       "Playwright",
       "Python",
       "Docker"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/mesflow-qa.png",
+        "caption": "MESFlow QA — Regression Protection",
+        "source": "Ảnh giao diện kiểm thử tự động",
+        "kind": "test_evidence",
+        "note": "Mô hình tính năng theo dõi regression; dữ liệu và trạng thái trong ảnh mang tính kiểm thử."
+      }
     ]
   },
   {
@@ -509,7 +634,8 @@
       "Python",
       "Docker",
       "Linux"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "sales-radar",
@@ -539,6 +665,15 @@
       "Python",
       "Browser",
       "AI"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/sales-radar.png",
+        "caption": "Sales Radar — giao diện bộ nhớ kiến thức",
+        "source": "Bằng chứng giao diện thử nghiệm",
+        "kind": "test_evidence",
+        "note": "Ảnh giao diện thử nghiệm, không công khai dữ liệu từ Facebook hoặc khách hàng."
+      }
     ]
   },
   {
@@ -569,7 +704,8 @@
       "Python",
       "LLM Orchestration",
       "Markdown"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "projectflow",
@@ -599,7 +735,8 @@
       "Python",
       "Git",
       "FastAPI"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "serverhub",
@@ -629,7 +766,8 @@
       "Python",
       "FastAPI",
       "SSH"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "openclaw-ops",
@@ -658,7 +796,8 @@
     "stack": [
       "Node.js",
       "OpenClaw"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "winding-cad",
@@ -688,7 +827,8 @@
       "Composite Mechanics",
       "CAD",
       "Optimization"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "offline-pos",
@@ -718,6 +858,15 @@
       ".NET",
       "WPF",
       "SQLite"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/screenshots/offline-pos.png",
+        "caption": "OfflinePOS — quản lý danh mục và tồn kho",
+        "source": "Ảnh chụp ứng dụng desktop thử nghiệm",
+        "kind": "test_evidence",
+        "note": "Cơ sở dữ liệu trong ảnh chỉ chứa sản phẩm mẫu."
+      }
     ]
   },
   {
@@ -748,7 +897,8 @@
       "Git",
       "MCP",
       "Workspace Isolation"
-    ]
+    ],
+    "screenshots": []
   },
   {
     "slug": "mesflow-kiosk-runtime-v2",
@@ -780,7 +930,8 @@
       "Arduino",
       "MESFlow"
     ],
-    "sourceUrl": "https://github.com/hungtranbkit/mesflow-kiosk-runtime-v2"
+    "sourceUrl": "https://github.com/hungtranbkit/mesflow-kiosk-runtime-v2",
+    "screenshots": []
   },
   {
     "slug": "terminal-mcp",
@@ -812,6 +963,7 @@
       "tmux",
       "Git"
     ],
-    "sourceUrl": "https://github.com/hungtranbkit/terminal-mcp"
+    "sourceUrl": "https://github.com/hungtranbkit/terminal-mcp",
+    "screenshots": []
   }
 ]
