@@ -749,5 +749,66 @@
       "MCP",
       "Workspace Isolation"
     ]
+  },
+  {
+    "slug": "mesflow-kiosk-runtime-v2",
+    "name": "MESFlow Kiosk Runtime v2",
+    "categoryLabel": "Kỹ thuật",
+    "category": "engineering",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Rebuild the ESP32 kiosk as a thin hardware runtime — renderer, local cache, offline journal, secure transport — wit",
+    "description": "Rebuild the ESP32 kiosk as a thin hardware runtime — renderer, local cache, offline journal, secure transport — with the MESFlow backend owning business state, workflow, policy, and UI. See docs/ARCHITECTURE.md for the f",
+    "website": "",
+    "featured": false,
+    "visual": "MKRV",
+    "sample": "Cấu hình thiết kế · thông số mẫu",
+    "steps": [
+      "Chọn cấu hình kỹ thuật",
+      "Thiết lập thông số mẫu",
+      "Đánh giá quy trình minh họa",
+      "Xem kết quả mô phỏng"
+    ],
+    "capabilities": [
+      "Thiết kế cấu hình kỹ thuật",
+      "Tổ chức quy trình kiểm tra",
+      "Hỗ trợ phân tích và thử nghiệm"
+    ],
+    "stack": [
+      "ESP32"
+    ],
+    "sourceUrl": "https://github.com/hungtranbkit/mesflow-kiosk-runtime-v2"
+  },
+  {
+    "slug": "terminal-mcp",
+    "name": "Terminal MCP",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "development",
+    "phaseLabel": "Đang phát triển",
+    "tagline": "server to USE it (not modify its code): read first. For the full technical spec (every feature's real status, confi",
+    "description": "server to USE it (not modify its code): read first. For the full technical spec (every feature's real status, config, schema, tests), see .",
+    "website": "",
+    "featured": false,
+    "visual": "TM",
+    "sample": "Tác vụ kỹ thuật · dữ liệu mẫu",
+    "steps": [
+      "Tạo tác vụ thử nghiệm",
+      "Thiết lập các thông số",
+      "Chạy quy trình mô phỏng",
+      "Xem nhật ký và kết quả"
+    ],
+    "capabilities": [
+      "Công cụ hỗ trợ kỹ thuật",
+      "Tổ chức luồng thao tác",
+      "Theo dõi trạng thái và kết quả"
+    ],
+    "stack": [
+      "Python",
+      "SQLite",
+      "MCP",
+      "Git"
+    ],
+    "sourceUrl": "https://github.com/hungtranbkit/terminal-mcp"
   }
 ]
