@@ -31,7 +31,7 @@ if(screenshots.length){
   var shot=screenshots[0];
   var kind=shot.kind==="public_demo"?"WEBSITE PUBLIC":"BẰNG CHỨNG KIỂM THỬ";
   return '<div class="project-art ui-screenshot">'+
-  '<img src="'+a(path(shot.src))+'" alt="'+a(shot.caption||("Ảnh giao diện "+p.name))+'" loading="lazy" decoding="async">'+
+  '<img src="'+a(path(shot.src))+'" alt="'+a(shot.caption||("Ảnh giao diện "+p.name))+'" loading="eager" decoding="sync" fetchpriority="high">'+
   '<div class="ui-photo-tag"><span class="ui-photo-dot" aria-hidden="true"></span>Ảnh giao diện · '+kind+'</div></div>';
 }
 return '<div class="project-art ui-unavailable art--'+a(p.category)+'">'+
