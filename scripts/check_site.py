@@ -32,7 +32,7 @@ for p in projects:
         assert src.startswith("assets/screenshots/") and ".." not in src, src
         assert src.endswith(".png") and len(src) <= 120, src
         path = root / src
-        assert path.is_file() and path.read_bytes().startswith(b"\\x89PNG\\r\\n\\x1a\\n"), src
+        assert path.is_file() and path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), src
         assert shot.get("kind") in {"public_demo", "test_evidence"}, src
         assert shot.get("caption") and shot.get("source") and shot.get("note"), src
         screenshot_files.add(src)
