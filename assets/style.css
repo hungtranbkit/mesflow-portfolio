@@ -47,3 +47,5 @@
 @media(max-width:900px){.screens-grid{grid-template-columns:1fr}.screen-figure>a,.screens-single .screen-figure>a{height:370px}}
 @media(max-width:600px){.screen-gallery{padding:51px 0}.screen-gallery .section-head h2{font-size:34px}.screen-figure>a,.screens-single .screen-figure>a{height:230px}.screens-empty{padding:18px;gap:13px}.screens-empty-icon{width:42px;height:42px;font-size:22px}.ui-photo-tag{font-size:8px;padding:8px}}
 @media(prefers-reduced-motion:reduce){.ui-screenshot img,.screen-figure img{transition:none}.project-card:hover .ui-screenshot img,.screen-figure a:hover img{transform:none}}
+
+#screenshots{scroll-margin-top:105px}
