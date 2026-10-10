@@ -1,6 +1,6 @@
 # MESFlow Lab — Project Portfolio
 
-Public, static portfolio for **Hùng Trần / MESFlow Lab**. Lists **25 selected projects**, across production operations, retail, data/AI, developer tools, and engineering R&D.
+Public, static portfolio for **Hùng Trần / MESFlow Lab**. Lists **27 currently catalogued projects**, across production operations, retail, data/AI, developer tools, and engineering R&D.
 
 ## Public pages
 - Landing page with featured work, searchable/filterable full catalogue, engineering profile and contact

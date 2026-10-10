@@ -757,25 +757,28 @@
     "category": "engineering",
     "phase": "prototype",
     "phaseLabel": "Prototype",
-    "tagline": "Rebuild the ESP32 kiosk as a thin hardware runtime — renderer, local cache, offline journal, secure transport — wit",
-    "description": "Rebuild the ESP32 kiosk as a thin hardware runtime — renderer, local cache, offline journal, secure transport — with the MESFlow backend owning business state, workflow, policy, and UI. See docs/ARCHITECTURE.md for the f",
+    "tagline": "Firmware ESP32-S3 theo kiến trúc tách thiết bị và nghiệp vụ",
+    "description": "Dự án xây dựng lại runtime kiosk ESP32-S3, tập trung vào hiển thị, bộ nhớ đệm, ghi nhật ký offline và kết nối an toàn. Phần quy trình nghiệp vụ do MESFlow backend quản lý. Đây là bản thử nghiệm, chưa sẵn sàng triển khai sản xuất.",
     "website": "",
     "featured": false,
-    "visual": "MKRV",
-    "sample": "Cấu hình thiết kế · thông số mẫu",
+    "visual": "IOT",
+    "sample": "Kiosk ESP32-S3 thử nghiệm · trạng thái mô phỏng",
     "steps": [
-      "Chọn cấu hình kỹ thuật",
-      "Thiết lập thông số mẫu",
-      "Đánh giá quy trình minh họa",
-      "Xem kết quả mô phỏng"
+      "Chọn cấu hình ESP32-S3 mẫu",
+      "Đọc chính sách từ backend giả lập",
+      "Ghi sự kiện vào nhật ký offline",
+      "Mô phỏng đồng bộ trở lại"
     ],
     "capabilities": [
-      "Thiết kế cấu hình kỹ thuật",
-      "Tổ chức quy trình kiểm tra",
-      "Hỗ trợ phân tích và thử nghiệm"
+      "Thiết kế firmware tối giản theo module",
+      "Chuẩn bị cơ chế lưu sự kiện offline",
+      "Tách nghiệp vụ khỏi thiết bị kiosk"
     ],
     "stack": [
-      "ESP32"
+      "ESP32-S3",
+      "C++",
+      "Arduino",
+      "MESFlow"
     ],
     "sourceUrl": "https://github.com/hungtranbkit/mesflow-kiosk-runtime-v2"
   },
@@ -786,27 +789,27 @@
     "category": "tools",
     "phase": "development",
     "phaseLabel": "Đang phát triển",
-    "tagline": "server to USE it (not modify its code): read first. For the full technical spec (every feature's real status, confi",
-    "description": "server to USE it (not modify its code): read first. For the full technical spec (every feature's real status, config, schema, tests), see .",
+    "tagline": "Kết nối AI với terminal và các phiên lập trình qua MCP",
+    "description": "Cầu nối giữa trợ lý AI và các phiên tmux trên máy được cấp quyền: khám phá phiên, quan sát trạng thái, gửi thao tác có kiểm soát và theo dõi các tác vụ dài.",
     "website": "",
     "featured": false,
-    "visual": "TM",
-    "sample": "Tác vụ kỹ thuật · dữ liệu mẫu",
+    "visual": "MCP",
+    "sample": "2 phiên tmux mẫu · một tác vụ kiểm tra",
     "steps": [
-      "Tạo tác vụ thử nghiệm",
-      "Thiết lập các thông số",
-      "Chạy quy trình mô phỏng",
-      "Xem nhật ký và kết quả"
+      "Kết nối máy được cấp quyền",
+      "Khám phá phiên terminal",
+      "Quan sát trạng thái và nhật ký",
+      "Mô phỏng thao tác được cho phép"
     ],
     "capabilities": [
-      "Công cụ hỗ trợ kỹ thuật",
-      "Tổ chức luồng thao tác",
-      "Theo dõi trạng thái và kết quả"
+      "Khám phá và quan sát phiên terminal",
+      "Thao tác có phân quyền và xác nhận",
+      "Theo dõi nhiệm vụ dài và khôi phục kết nối"
     ],
     "stack": [
       "Python",
-      "SQLite",
       "MCP",
+      "tmux",
       "Git"
     ],
     "sourceUrl": "https://github.com/hungtranbkit/terminal-mcp"

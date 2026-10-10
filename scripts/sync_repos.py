@@ -138,6 +138,10 @@ def human_title(name, readme):
     return " ".join(x.upper() if x in uppercase else x.capitalize() for x in re.split("[-_]+", name))
 
 def readme_summary(readme):
+    # Prefer product-purpose prose over setup instructions or LLM-directed notices.
+    section = re.search(r"(?im)^##\s*(purpose|overview|giới thiệu|tổng quan|what it does)\s*$", readme)
+    if section:
+        readme = readme[section.end():]
     lines, blocks, fenced = [], [], False
     for raw in readme.splitlines()[:115]:
         s = raw.strip()
