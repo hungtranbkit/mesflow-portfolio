@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from sync_repos import allowed_repo, page_for, project_for, public_text, sync
+from sync_repos import allowed_repo, page_for, project_for, public_text, readme_summary, sync
 
 OWNER = "hungtranbkit"
 README = """# Example Workflow Toolkit
@@ -107,6 +107,12 @@ class PortfolioSyncTests(unittest.TestCase):
                              "summary": "token=ghp_FAKE_SUPER_LONG_DO_NOT_PUBLISH"})
         self.assertEqual(sync(self.root, OWNER, [bad], apply=True, fixture=True), [])
         self.assertEqual(len(json.loads((self.root / "data/projects.json").read_text())), 1)
+
+    def test_readme_purpose_overrides_setup_notice(self):
+        readme = "# Demo\n\n**If you are an agent**, run setup first.\n\nserver to USE it rather than modify it.\n\n## Purpose\n\nThis tool manages independent execution sessions and provides reliable structured status reporting for developers.\n"
+        summary = readme_summary(readme)
+        self.assertIn("manages independent execution", summary)
+        self.assertNotIn("server to USE", summary)
 
     def test_prototype_label(self):
         item = project_for(repo("new-kiosk"), README + "\nDO NOT DEPLOY TO PRODUCTION.",
