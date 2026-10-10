@@ -1,0 +1,753 @@
+[
+  {
+    "slug": "mesflow",
+    "name": "MESFlow",
+    "categoryLabel": "Vận hành",
+    "category": "operations",
+    "phase": "product",
+    "phaseLabel": "Đang vận hành",
+    "tagline": "Hệ thống theo dõi sản xuất theo từng công đoạn",
+    "description": "Từ lệnh sản xuất đến từng lần quét thẻ tại xưởng: tiến độ, sản lượng và hiệu suất được ghi nhận có thể truy vết.",
+    "website": "https://mesflow.net",
+    "featured": true,
+    "visual": "MES",
+    "sample": "Đơn hàng PO-026 · 3 công đoạn",
+    "steps": [
+      "Tạo PO và công đoạn",
+      "Quét thẻ nhân viên & mã OP",
+      "Ghi nhận phiên làm việc",
+      "Theo dõi sản lượng và đối soát"
+    ],
+    "capabilities": [
+      "Theo dõi thời gian thực",
+      "Báo cáo năng suất theo nhân viên và công đoạn",
+      "Điều chỉnh có lịch sử audit"
+    ],
+    "stack": [
+      "Python",
+      "PostgreSQL",
+      "QR / Kiosk"
+    ]
+  },
+  {
+    "slug": "novaretail",
+    "name": "NovaRetail",
+    "categoryLabel": "Bán lẻ",
+    "category": "commerce",
+    "phase": "development",
+    "phaseLabel": "Đang phát triển",
+    "tagline": "Quản lý bán hàng, kho và giao hàng",
+    "description": "Quy trình liền mạch từ lập đơn, kiểm kho, giao hàng đến công nợ; hướng đến môi trường bán lẻ vận hành offline.",
+    "website": "",
+    "featured": true,
+    "visual": "POS",
+    "sample": "Đơn bán gạch ốp lát · 3 mặt hàng",
+    "steps": [
+      "Tạo đơn bán",
+      "Thêm sản phẩm và số lượng",
+      "Phân kho & giao hàng",
+      "Ghi sổ công nợ"
+    ],
+    "capabilities": [
+      "Bán hàng, tồn kho và giao vận",
+      "Quy đổi thùng, viên, m²",
+      "Kiến trúc Web-first, offline Windows"
+    ],
+    "stack": [
+      "TypeScript",
+      "React",
+      "SQLite",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "slug": "propertyiq",
+    "name": "PropertyIQ",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "beta",
+    "phaseLabel": "Beta công khai",
+    "tagline": "Trí tuệ dữ liệu cho thị trường bất động sản",
+    "description": "Thu thập, tìm kiếm, phân tích tin đăng và hỗ trợ định giá so sánh bằng chứng thay vì chỉ dựa vào một mức giá rao.",
+    "website": "https://propertyiq.mesflow.net/",
+    "featured": true,
+    "visual": "MAP",
+    "sample": "Tài sản 120 m² · 3 bất động sản so sánh",
+    "steps": [
+      "Nhập nhu cầu tìm kiếm",
+      "Lọc và hợp nhất tin đăng",
+      "Chọn tài sản so sánh",
+      "Xem khoảng giá tham khảo"
+    ],
+    "capabilities": [
+      "Tìm kiếm kết hợp AI + dữ liệu",
+      "Truy vết nguồn tin và lịch sử",
+      "Mô hình điều chỉnh so sánh"
+    ],
+    "stack": [
+      "Python",
+      "React",
+      "PostgreSQL",
+      "AI Search"
+    ]
+  },
+  {
+    "slug": "hint",
+    "name": "Hint",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "beta",
+    "phaseLabel": "Beta công khai",
+    "tagline": "Hướng dẫn đúng vị trí, ngay trong trang web",
+    "description": "Tiện ích Chrome cho phép gắn hướng dẫn ngắn vào ô nhập, nút bấm và quy trình trên website mà người dùng đang làm việc.",
+    "website": "https://hint.mesflow.net/",
+    "featured": true,
+    "visual": "HNT",
+    "sample": "Biểu mẫu có 3 trường cần hướng dẫn",
+    "steps": [
+      "Bật chế độ cập nhật",
+      "Chọn trường cần hướng dẫn",
+      "Nhập nội dung gợi ý",
+      "Lưu và xem Hint hiển thị"
+    ],
+    "capabilities": [
+      "Không cần sửa website gốc",
+      "Ghi chú theo ngữ cảnh từng phần tử",
+      "Lưu cục bộ trong Chrome"
+    ],
+    "stack": [
+      "Chrome Extension",
+      "JavaScript",
+      "Browser Storage"
+    ]
+  },
+  {
+    "slug": "novafactory",
+    "name": "NovaFactory",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "demo",
+    "phaseLabel": "Có bản demo",
+    "tagline": "Nhà máy tạo ứng dụng từ các khối tiêu chuẩn",
+    "description": "Ghép các module đã được thẩm định để thiết kế ứng dụng, nhìn thấy kiến trúc và tạo bộ khung có thể tiếp tục phát triển.",
+    "website": "",
+    "featured": true,
+    "visual": "BLD",
+    "sample": "Ứng dụng mẫu · 4 khối chức năng",
+    "steps": [
+      "Chọn loại ứng dụng",
+      "Thêm module tiêu chuẩn",
+      "Phân tích tương thích",
+      "Tạo blueprint kiến trúc"
+    ],
+    "capabilities": [
+      "Visual Application Factory",
+      "Danh mục module và preset",
+      "Kiểm tra rủi ro tích hợp"
+    ],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Architecture Blueprint"
+    ]
+  },
+  {
+    "slug": "ai-gateway",
+    "name": "AI Gateway",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Một điểm truy cập cho nhiều mô hình AI",
+    "description": "Hệ thống điều phối yêu cầu AI theo provider và workload, với ranh giới bảo mật và khả năng giám sát chi phí.",
+    "website": "",
+    "featured": true,
+    "visual": "AI",
+    "sample": "Yêu cầu phân loại văn bản · 2 provider",
+    "steps": [
+      "Tiếp nhận yêu cầu",
+      "Kiểm tra chính sách truy cập",
+      "Chọn tuyến mô hình phù hợp",
+      "Trả kết quả và log"
+    ],
+    "capabilities": [
+      "API tương thích OpenAI",
+      "Định tuyến và phân tách dịch vụ",
+      "Quan sát và quản lý tác vụ"
+    ],
+    "stack": [
+      "Python",
+      "TypeScript",
+      "API Gateway"
+    ]
+  },
+  {
+    "slug": "bdsdaknong",
+    "name": "BĐS Đắk Nông",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "beta",
+    "phaseLabel": "Beta công khai",
+    "tagline": "Radar tin đăng bất động sản có bản đồ",
+    "description": "Theo dõi nguồn tin thị trường khu vực, phát hiện trùng lặp, chuẩn hóa thông tin và hỗ trợ xem lại bài đăng gốc.",
+    "website": "https://bdsdaknong.mesflow.net/",
+    "featured": false,
+    "visual": "BDS",
+    "sample": "Tìm kiếm Gia Nghĩa · 18 tin mẫu",
+    "steps": [
+      "Thu thập nguồn tin",
+      "Chuẩn hóa vị trí & diện tích",
+      "Khử trùng lặp",
+      "Hiển thị trên danh sách & bản đồ"
+    ],
+    "capabilities": [
+      "Radar nguồn tin",
+      "Bản đồ và bộ lọc địa bàn",
+      "Lưu chứng cứ bài gốc"
+    ],
+    "stack": [
+      "Crawler",
+      "Python",
+      "Maps"
+    ]
+  },
+  {
+    "slug": "customer-ai",
+    "name": "Customer AI",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "demo",
+    "phaseLabel": "Có bản demo",
+    "tagline": "Trợ lý chăm sóc và tư vấn khách hàng trên website",
+    "description": "Gắn một widget chat vào website; khai thác kho kiến thức có kiểm soát và chuyển tiếp cho nhân viên khi cần.",
+    "website": "https://lab.mesflow.net/customer-ai/",
+    "featured": false,
+    "visual": "CHAT",
+    "sample": "Khách hỏi vận chuyển và trạng thái đơn",
+    "steps": [
+      "Khách đặt câu hỏi",
+      "Tìm tài liệu liên quan",
+      "Trả lời có căn cứ",
+      "Chuyển cho nhân viên hỗ trợ"
+    ],
+    "capabilities": [
+      "Chat widget nhúng",
+      "Knowledge base và inbox",
+      "Phân quyền theo đơn vị"
+    ],
+    "stack": [
+      "TypeScript",
+      "Python",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "slug": "jobradar",
+    "name": "JobRadar",
+    "categoryLabel": "Sản phẩm web",
+    "category": "commerce",
+    "phase": "development",
+    "phaseLabel": "Đang phát triển",
+    "tagline": "Tìm việc làm từ nhiều nguồn trên một trang",
+    "description": "Tổng hợp vị trí tuyển dụng, lọc theo địa điểm và mô hình làm việc; quản trị nguồn và lưu dấu dữ liệu gốc.",
+    "website": "",
+    "featured": false,
+    "visual": "JOB",
+    "sample": "Tìm 'Kỹ sư tự động hóa' · 6 tin mẫu",
+    "steps": [
+      "Đồng bộ tin tuyển dụng",
+      "Tìm theo từ khóa",
+      "Lọc địa điểm & remote",
+      "Mở nguồn ứng tuyển gốc"
+    ],
+    "capabilities": [
+      "Tìm kiếm đa nguồn",
+      "RSS và trang chi tiết chuẩn SEO",
+      "Quản trị nguồn độc lập"
+    ],
+    "stack": [
+      "FastAPI",
+      "SQLite",
+      "Crawler"
+    ]
+  },
+  {
+    "slug": "chon-do-thong-minh",
+    "name": "Chọn Đồ Thông Minh",
+    "categoryLabel": "Sản phẩm web",
+    "category": "commerce",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Nền tảng gợi ý sản phẩm và affiliate",
+    "description": "Tổ chức dữ liệu sản phẩm, so sánh lựa chọn và theo dõi hiệu quả kênh giới thiệu một cách minh bạch.",
+    "website": "",
+    "featured": false,
+    "visual": "SHOP",
+    "sample": "So sánh 3 sản phẩm gia dụng mẫu",
+    "steps": [
+      "Nhập nhu cầu mua sắm",
+      "Lập danh sách sản phẩm",
+      "So sánh thuộc tính",
+      "Chọn phương án phù hợp"
+    ],
+    "capabilities": [
+      "Bảng quản trị sản phẩm",
+      "Luồng affiliate có kiểm soát",
+      "Dữ liệu demo tách khỏi dữ liệu thật"
+    ],
+    "stack": [
+      "TypeScript",
+      "PostgreSQL",
+      "Worker"
+    ]
+  },
+  {
+    "slug": "novamaint",
+    "name": "NovaMaint",
+    "categoryLabel": "Vận hành",
+    "category": "operations",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Bảo trì thiết bị cho đội kỹ thuật hiện trường",
+    "description": "Quản lý tài sản, phiếu bảo trì và checklist với định hướng offline-first, đồng bộ từ hiện trường về trung tâm.",
+    "website": "",
+    "featured": false,
+    "visual": "MNT",
+    "sample": "Máy nén khí A02 · một phiếu sửa chữa",
+    "steps": [
+      "Ghi nhận thiết bị",
+      "Mở phiếu bảo trì",
+      "Hoàn thành checklist",
+      "Đồng bộ tình trạng"
+    ],
+    "capabilities": [
+      "Quản lý tài sản",
+      "Phiếu công việc ngoài hiện trường",
+      "Offline-first / sync"
+    ],
+    "stack": [
+      "SQLite",
+      "PostgreSQL",
+      "CouchDB"
+    ]
+  },
+  {
+    "slug": "qr-restaurant",
+    "name": "QR Restaurant",
+    "categoryLabel": "Sản phẩm web",
+    "category": "commerce",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Đặt món và vận hành nhà hàng bằng mã QR",
+    "description": "Khách đặt món từ bàn; bếp, phục vụ và thu ngân theo dõi cùng một luồng xử lý đơn.",
+    "website": "",
+    "featured": false,
+    "visual": "QR",
+    "sample": "Bàn 06 · 2 món · 1 yêu cầu phục vụ",
+    "steps": [
+      "Khách quét QR bàn",
+      "Chọn món & gửi order",
+      "Bếp nhận phiếu",
+      "Thu ngân kết toán"
+    ],
+    "capabilities": [
+      "QR theo từng bàn",
+      "Màn hình bếp thời gian thực",
+      "Phân quyền nhân viên"
+    ],
+    "stack": [
+      "Next.js",
+      "Prisma",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "slug": "gia-pha",
+    "name": "Gia Phả",
+    "categoryLabel": "Sản phẩm web",
+    "category": "commerce",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Hệ thống lưu giữ và kết nối phả hệ",
+    "description": "Cây gia phả trực quan, hồ sơ thành viên, tư liệu lịch sử và quy trình đóng góp có kiểm duyệt.",
+    "website": "",
+    "featured": false,
+    "visual": "TREE",
+    "sample": "Dòng họ mẫu · 12 thế hệ",
+    "steps": [
+      "Mở cây phả hệ",
+      "Tìm một thành viên",
+      "Xem tư liệu liên quan",
+      "Gửi đề xuất cập nhật"
+    ],
+    "capabilities": [
+      "Cây phả hệ tương tác",
+      "Kho tư liệu dòng họ",
+      "Duyệt chỉnh sửa theo vai trò"
+    ],
+    "stack": [
+      "Next.js",
+      "React Flow",
+      "TypeScript"
+    ]
+  },
+  {
+    "slug": "esp32-kiosk",
+    "name": "MESFlow ESP32 Kiosk",
+    "categoryLabel": "Kỹ thuật",
+    "category": "engineering",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Thiết bị quét và ghi nhận tại điểm sản xuất",
+    "description": "Firmware cho trạm quét thẻ và mã công đoạn tại xưởng, hướng đến triển khai vận hành bền bỉ.",
+    "website": "",
+    "featured": false,
+    "visual": "IOT",
+    "sample": "Kiosk K02 · nhân viên 015",
+    "steps": [
+      "Đưa thẻ nhân viên",
+      "Quét mã công đoạn",
+      "Ghi nhận trạng thái",
+      "Đồng bộ về hệ thống"
+    ],
+    "capabilities": [
+      "Kiosk cho môi trường xưởng",
+      "Cập nhật OTA có kiểm soát",
+      "Xử lý trạng thái kết nối"
+    ],
+    "stack": [
+      "ESP32-S3",
+      "C++",
+      "HTTPS"
+    ]
+  },
+  {
+    "slug": "ai-qc-agent",
+    "name": "AI QC Agent",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Kỹ sư kiểm thử AI với trình duyệt thật",
+    "description": "Khám phá giao diện, lập kế hoạch kiểm thử theo yêu cầu, thực thi và lưu bằng chứng để xử lý lỗi có hệ thống.",
+    "website": "",
+    "featured": false,
+    "visual": "QA",
+    "sample": "Kiểm tra luồng đăng nhập + lập đơn",
+    "steps": [
+      "Đọc yêu cầu và URL",
+      "Xây kế hoạch test",
+      "Chạy tương tác trình duyệt",
+      "Lập danh sách lỗi & bằng chứng"
+    ],
+    "capabilities": [
+      "Kiểm thử theo kịch bản",
+      "Browser automation có kiểm soát",
+      "Báo cáo và regression"
+    ],
+    "stack": [
+      "Python",
+      "Playwright",
+      "AI Agents"
+    ]
+  },
+  {
+    "slug": "mesflow-qa",
+    "name": "MESFlow QA Center",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Trung tâm kiểm thử và phát hành MESFlow",
+    "description": "Quản lý kịch bản kiểm thử, quan sát thực thi trình duyệt và xác minh chất lượng trước phát hành.",
+    "website": "",
+    "featured": false,
+    "visual": "QC",
+    "sample": "Bộ test 8 ca · bản phát hành mẫu",
+    "steps": [
+      "Chọn bản build cần test",
+      "Chạy kịch bản tự động",
+      "Xem trạng thái từng case",
+      "Tổng hợp kết quả release"
+    ],
+    "capabilities": [
+      "Test case monitor",
+      "Quan sát thao tác thời gian thực",
+      "Gate chất lượng phát hành"
+    ],
+    "stack": [
+      "Playwright",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
+    "slug": "deploy-agent",
+    "name": "MESFlow Deploy Agent",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Điều phối triển khai và khôi phục dịch vụ",
+    "description": "Tải bản phát hành, kiểm tra trước deploy, giám sát trạng thái và quản lý rollback cho môi trường MESFlow.",
+    "website": "",
+    "featured": false,
+    "visual": "OPS",
+    "sample": "Release v65 · kiểm tra 5 cổng",
+    "steps": [
+      "Nhận bản phát hành",
+      "Preflight hạ tầng",
+      "Triển khai & health check",
+      "Xác minh hoặc rollback"
+    ],
+    "capabilities": [
+      "Preflight và dry-run",
+      "Theo dõi trạng thái release",
+      "Khôi phục có kiểm soát"
+    ],
+    "stack": [
+      "Python",
+      "Docker",
+      "Linux"
+    ]
+  },
+  {
+    "slug": "sales-radar",
+    "name": "Sales Radar",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Ghi nhận và đánh giá cơ hội bán hàng có kiểm soát",
+    "description": "Công cụ nội bộ lưu bài viết được người dùng lựa chọn, phân tích nhu cầu và hỗ trợ theo dõi lead.",
+    "website": "",
+    "featured": false,
+    "visual": "LEAD",
+    "sample": "3 cơ hội mẫu từ nguồn công khai",
+    "steps": [
+      "Người dùng chọn bài cần lưu",
+      "Lưu nguồn và nội dung",
+      "Đánh giá nhu cầu",
+      "Ưu tiên chăm sóc"
+    ],
+    "capabilities": [
+      "Human-in-the-loop",
+      "Chấm điểm và gắn nhãn",
+      "Dashboard quản lý lead"
+    ],
+    "stack": [
+      "Python",
+      "Browser",
+      "AI"
+    ]
+  },
+  {
+    "slug": "ai-design-council",
+    "name": "AI Design Council",
+    "categoryLabel": "Dữ liệu & AI",
+    "category": "ai",
+    "phase": "prototype",
+    "phaseLabel": "Prototype",
+    "tagline": "Hội đồng phản biện đa tác nhân AI",
+    "description": "Nhiều vai trò AI đề xuất, phản biện và tổng hợp phương án thiết kế, giữ quyền quyết định cuối cùng cho con người.",
+    "website": "",
+    "featured": false,
+    "visual": "DEBATE",
+    "sample": "Thiết kế ứng dụng quản lý kho",
+    "steps": [
+      "Tạo đề bài sản phẩm",
+      "Các vai trò đưa đề xuất",
+      "Phản biện chéo",
+      "Tổng hợp quyết định"
+    ],
+    "capabilities": [
+      "Đa vai trò phản biện",
+      "Kiểm tra mức độ hội tụ",
+      "Lưu từng vòng thảo luận"
+    ],
+    "stack": [
+      "Python",
+      "LLM Orchestration",
+      "Markdown"
+    ]
+  },
+  {
+    "slug": "projectflow",
+    "name": "ProjectFlow Workspace",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Quản lý worktree, nhánh và quy trình tích hợp mã",
+    "description": "Điều phối nhiều agent lập trình với một nhánh cho mỗi task và cổng kiểm thử trước khi hợp nhất.",
+    "website": "",
+    "featured": false,
+    "visual": "GIT",
+    "sample": "3 nhánh công việc · 1 integration",
+    "steps": [
+      "Tạo task/worktree riêng",
+      "Theo dõi thay đổi",
+      "Tích hợp vào nhánh test",
+      "Kiểm tra trước merge"
+    ],
+    "capabilities": [
+      "Agent/worktree isolation",
+      "Theo dõi CI gate",
+      "Tích hợp có thể audit"
+    ],
+    "stack": [
+      "Python",
+      "Git",
+      "FastAPI"
+    ]
+  },
+  {
+    "slug": "serverhub",
+    "name": "ServerHub",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Bảng điều khiển vận hành máy chủ có kiểm soát",
+    "description": "Giao diện thao tác trên những máy chủ được ủy quyền, có xác minh fingerprint và giới hạn quyền truy cập.",
+    "website": "",
+    "featured": false,
+    "visual": "SRV",
+    "sample": "2 máy chủ thử nghiệm · 4 dịch vụ",
+    "steps": [
+      "Chọn máy chủ",
+      "Xác thực danh tính host",
+      "Đọc tình trạng dịch vụ",
+      "Thực hiện lệnh được phép"
+    ],
+    "capabilities": [
+      "SSH console nội bộ",
+      "Quản trị dịch vụ",
+      "Bảo vệ thông tin truy cập"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "SSH"
+    ]
+  },
+  {
+    "slug": "openclaw-ops",
+    "name": "OpenClaw Ops",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Bảng điều khiển vận hành agent và tác vụ",
+    "description": "Quan sát hoạt động dịch vụ agent, phân loại lỗi và hỗ trợ kiểm tra các quy trình tự động hóa.",
+    "website": "",
+    "featured": false,
+    "visual": "FLOW",
+    "sample": "4 tác vụ mẫu · 1 cảnh báo",
+    "steps": [
+      "Đọc trạng thái gateway",
+      "Nhóm các tác vụ",
+      "Phân loại nguyên nhân lỗi",
+      "Xem dấu vết vận hành"
+    ],
+    "capabilities": [
+      "Read-only operations",
+      "Báo cáo lỗi có cấu trúc",
+      "Thống kê tiến độ"
+    ],
+    "stack": [
+      "Node.js",
+      "OpenClaw"
+    ]
+  },
+  {
+    "slug": "winding-cad",
+    "name": "Filament Winding CAD",
+    "categoryLabel": "Kỹ thuật",
+    "category": "engineering",
+    "phase": "research",
+    "phaseLabel": "Nghiên cứu",
+    "tagline": "Thiết kế kết cấu composite quấn sợi",
+    "description": "Phát triển phương pháp và phần mềm tính toán cho kết cấu composite quấn sợi, gắn kết phân tích cơ học và khả năng chế tạo.",
+    "website": "",
+    "featured": false,
+    "visual": "CAD",
+    "sample": "Ống composite · 4 lớp sợi minh họa",
+    "steps": [
+      "Định nghĩa hình học",
+      "Thiết lập lớp và góc sợi",
+      "Đánh giá phương án bố trí",
+      "Xuất cấu hình nghiên cứu"
+    ],
+    "capabilities": [
+      "Cơ học vật liệu composite",
+      "Thiết kế cấu trúc quấn sợi",
+      "Nghiên cứu tối ưu hóa"
+    ],
+    "stack": [
+      "Composite Mechanics",
+      "CAD",
+      "Optimization"
+    ]
+  },
+  {
+    "slug": "offline-pos",
+    "name": "OfflinePOS",
+    "categoryLabel": "Bán lẻ",
+    "category": "commerce",
+    "phase": "internal",
+    "phaseLabel": "Công cụ nội bộ",
+    "tagline": "Ứng dụng POS Windows cho môi trường offline",
+    "description": "Nền tảng bán hàng desktop với nghiệp vụ kho, tài chính và cơ chế dữ liệu cục bộ / mạng LAN.",
+    "website": "",
+    "featured": false,
+    "visual": "WPF",
+    "sample": "Quầy thu ngân · 3 sản phẩm demo",
+    "steps": [
+      "Chọn cửa hàng",
+      "Tạo phiếu bán",
+      "Cập nhật tồn kho",
+      "Ghi nhận thanh toán"
+    ],
+    "capabilities": [
+      "Windows native desktop",
+      "Tồn kho và kế toán vận hành",
+      "SQLite hoặc PostgreSQL LAN"
+    ],
+    "stack": [
+      ".NET",
+      "WPF",
+      "SQLite"
+    ]
+  },
+  {
+    "slug": "repoport",
+    "name": "RepoPort",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "research",
+    "phaseLabel": "Nghiên cứu",
+    "tagline": "Workspace tách biệt để AI làm việc với repository",
+    "description": "Ý tưởng sản phẩm quản lý không gian lập trình an toàn, cho phép kết nối AI với Git mà không mở rộng quyền vào máy người dùng.",
+    "website": "",
+    "featured": false,
+    "visual": "REPO",
+    "sample": "Repository mẫu · workspace cách ly",
+    "steps": [
+      "Kết nối repository",
+      "Tạo workspace riêng",
+      "Chạy tác vụ có kiểm soát",
+      "Xem diff & log"
+    ],
+    "capabilities": [
+      "Workspace cô lập",
+      "Git-aware và resume task",
+      "Ranh giới quyền rõ ràng"
+    ],
+    "stack": [
+      "Git",
+      "MCP",
+      "Workspace Isolation"
+    ]
+  }
+]
