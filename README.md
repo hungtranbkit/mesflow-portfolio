@@ -46,3 +46,7 @@ python3 -m unittest discover -s scripts -p 'test_repo_sync.py' -v
 python3 scripts/sync_repos.py --owner hungtranbkit  # dry-run
 python3 scripts/sync_repos.py --owner hungtranbkit --apply
 ```
+
+## Interface screenshots
+
+16 reviewed real screenshots covering 13 of 27 projects are stored locally in assets/screenshots/ with public-demo/test-evidence captions. The other projects show a clear no-screenshot message. See docs/SCREENSHOTS.md for provenance, privacy safeguards and the remaining image backlog.
