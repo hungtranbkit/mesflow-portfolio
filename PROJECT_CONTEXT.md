@@ -6,7 +6,7 @@ Repository: hungtranbkit/mesflow-portfolio
 Intended public origin: https://hungtranbkit.github.io/mesflow-portfolio/
 
 ## Product definition
-An editorial landing page and case-study/demo hub for 25 meaningful projects chosen from the owner's larger GitHub workspace. Excludes test repos, third-party experiments with no delivered implementation, and credential-sensitive workflows.
+An editorial landing page and case-study/demo hub for 27 currently catalogued projects chosen from the owner's larger GitHub workspace. Excludes test repos, third-party experiments with no delivered implementation, and credential-sensitive workflows.
 
 ## Architecture
 Pure static HTML + CSS + JavaScript. No npm dependencies, build step, server-side auth, DB or live AI calls.
@@ -43,4 +43,9 @@ No internal login flow is exposed. External product URLs only when established. 
 - Public repo case studies may show source links. Existing projects remain unchanged.
 - Docs `docs/DAILY_SYNC.md` describe opt-in and runbooks.
 - Release gate: unit tests + catalog route checker + `node --check assets/app.js`. Manual dry-run confirmed two previously unlisted public candidates: Terminal MCP and MESFlow Kiosk Runtime v2.
-- **Outstanding until release verified**: merge PR; switch GitHub Pages build_type to workflow; dispatch once; inspect Actions deployment and public new URLs. Do not claim the automation operational before these pass.
+- Release verified: PR #1 merged (aabdf855), GitHub Pages build_type=workflow; manual workflow_dispatch #38023301049 completed successfully (scan + deploy), catalog now 27 entries with Terminal MCP and MESFlow Kiosk Runtime v2, live HTTP 200 on home, detail and demo. Future schedule 08:17 ICT.
+
+## Follow-up content quality (2026-10-10)
+- Corrected the two first auto-discovered project summaries into grounded Vietnamese copy, including an explicit non-production warning for Kiosk Runtime v2.
+- README parser now prioritizes Purpose / Overview headings to avoid treating tool-usage instructions as product descriptions.
+- Re-run the daily workflow after merging updates to publish the new content.
