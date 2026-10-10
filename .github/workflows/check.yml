@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Verify unattended project discovery safety
+        run: python3 -m unittest discover -s scripts -p 'test_repo_sync.py' -v
       - name: Validate projects and generated routes
         run: python3 scripts/check_site.py
       - name: Check JavaScript syntax
