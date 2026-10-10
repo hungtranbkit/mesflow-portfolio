@@ -10,7 +10,11 @@ function e(v){return String(v===null||v===undefined?"":v).replace(/[&<>"']/g,fun
 function a(v){return e(v)}
 function detailPath(p){return path("projects/"+p.slug+"/")}
 function demoPath(p){return path("projects/"+p.slug+"/demo/")}
-function external(p){return p.website?'<a class="button-outline button-sm" href="'+a(p.website)+'" target="_blank" rel="noopener noreferrer">Website sản phẩm <span aria-hidden="true">↗</span></a>':""}
+function external(p){
+var w=p.website?'<a class="button-outline button-sm" href="'+a(p.website)+'" target="_blank" rel="noopener noreferrer">Website sản phẩm <span aria-hidden="true">↗</span></a>':"";
+var g=p.sourceUrl?'<a class="button-outline button-sm" href="'+a(p.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Mã nguồn GitHub <span aria-hidden="true">↗</span></a>':"";
+return w+g;
+}
 function header(){
 return '<a href="#main" class="skip-link">Bỏ qua điều hướng</a>'+
 '<div class="header-note"><span class="dot"></span> INDEPENDENT SOFTWARE & ENGINEERING PORTFOLIO <span class="dot"></span></div>'+
