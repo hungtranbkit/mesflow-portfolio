@@ -24,8 +24,8 @@ API = "https://api.github.com"
 CATEGORIES = {"operations": "Vận hành", "commerce": "Bán lẻ", "ai": "Dữ liệu & AI", "tools": "Công cụ", "engineering": "Kỹ thuật"}
 PHASES = {"product": "Đang vận hành", "beta": "Beta công khai", "demo": "Có bản demo", "development": "Đang phát triển", "prototype": "Prototype", "internal": "Công cụ nội bộ", "research": "Nghiên cứu"}
 ALIASES = {"mesflow": "mesflow", "mesflow-esp32-kiosk": "esp32-kiosk", "mesflow-qa-center": "mesflow-qa", "mesflow-agent": "deploy-agent", "projectflow-workspace-manager": "projectflow", "qr-restaurant": "qr-restaurant", "ai-design-council": "ai-design-council"}
-EXCLUDED = {"mesflow-portfolio", "note", "rea-mcp-research", "fb-reg", "fb_check", "fb_reg", "fb_reg_new", "mini-factory-tycoon"}
-EXCLUDED_RE = re.compile(r"(^|[-_])(test|fixture|scratch|sandbox|playground|benchmark|backup|tmp)([-_]|$)|^claude-wm-.*-test")
+EXCLUDED = {"mesflow-portfolio", "note"}
+EXCLUDED_RE = re.compile(r"(^|[-_])(test|fixture|scratch|sandbox|playground|benchmark|backup|tmp)([-_]|$)|^fb[-_]")
 SECRET_RE = re.compile(r"(?i)(ghp_[a-z0-9_]{12,}|github_pat_[a-z0-9_]{12,}|sk-[a-z0-9_-]{14,}|AIza[a-z0-9_-]{25,}|-----BEGIN .*PRIVATE KEY-----|(?:password|token|api.?key|secret)\s*[:=]\s*['\"]?\S+)")
 STEPS = {
     "operations": ["Thiết lập quy trình mẫu", "Nhập thông tin vận hành", "Ghi nhận trạng thái", "Xem kết quả mô phỏng"],
