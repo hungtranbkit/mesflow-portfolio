@@ -33,3 +33,14 @@ No internal login flow is exposed. External product URLs only when established. 
 - Add testimonials/case studies only with verified evidence and permission.
 - Optionally attach a verified `portfolio.mesflow.net` DNS after public test.
 - Keep project phase labels and URLs synchronized with production releases.
+
+## Scheduled GitHub repository discovery (2026-10-10)
+- Entrypoint: `scripts/sync_repos.py` standard-library-only, idempotent, does not execute remote README/code. Skips forks, archived, test/empty repos; public repo README quality gate; hand-curated existing aliases protected.
+- Private: only repo-owner token and explicit `portfolio.public.json` (`publish:true` + safe summary); private README not ingested; private source links not exposed. `PORTFOLIO_SYNC_TOKEN` optional GitHub Actions secret, not configured by code. Without it the daily scan only sees public repos.
+- Pages: `.github/workflows/daily-portfolio-sync.yml` scheduled at 01:17 UTC (08:17 Vietnam), push, manual dispatch. One workflow discovers/commits and deploys the same tested site artifact, avoiding GITHUB_TOKEN pushes failing to trigger legacy Pages builds.
+- `scripts/build_site.py` allowlists public site files and excludes the workspace, logs, scripts, `.git`, and secrets.
+- `scripts/test_repo_sync.py` covers private opt-in, rejection of unapproved private/short/fork/test repos, URL escaping, route generation and idempotency.
+- Public repo case studies may show source links. Existing projects remain unchanged.
+- Docs `docs/DAILY_SYNC.md` describe opt-in and runbooks.
+- Release gate: unit tests + catalog route checker + `node --check assets/app.js`. Manual dry-run confirmed two previously unlisted public candidates: Terminal MCP and MESFlow Kiosk Runtime v2.
+- **Outstanding until release verified**: merge PR; switch GitHub Pages build_type to workflow; dispatch once; inspect Actions deployment and public new URLs. Do not claim the automation operational before these pass.
