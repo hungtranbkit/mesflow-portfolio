@@ -68,8 +68,10 @@ class PortfolioSyncTests(unittest.TestCase):
         self.assertFalse(allowed_repo(repo("mesflow")))
         self.assertFalse(allowed_repo(repo("fork-project", fork=True)))
         self.assertEqual(public_text("api_key=sk-SUPERSECRETSUPERSECRET"), "")
-        self.assertEqual(page_for({"name": "<script>", "slug": "safe", "description": "desc",
-                                   "tagline": "good"}, demo=False).count("<script>"), 1)
+        rendered = page_for({"name": "<script>", "slug": "safe", "description": "desc",
+                             "tagline": "good"}, demo=False)
+        self.assertIn("&lt;script&gt;", rendered)
+        self.assertNotIn("<h1><script>", rendered)
 
     def test_dry_run_does_not_write(self):
         result = sync(self.root, OWNER, self.repos, fixture=True)
