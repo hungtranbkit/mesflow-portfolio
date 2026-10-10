@@ -74,7 +74,7 @@ var items=shots.map(function(shot,i){
 var src=a(path(shot.src));
 return '<figure class="screen-figure">'+
 '<a href="'+src+'" target="_blank" rel="noopener noreferrer" title="Mở ảnh đầy đủ: '+a(shot.caption)+'">'+
-'<img src="'+src+'" alt="'+a(shot.caption)+'" loading="lazy" decoding="async">'+
+'<img src="'+src+'" alt="'+a(shot.caption)+'" loading="eager" decoding="sync">'+
 '<span class="screen-open" aria-hidden="true">↗ Xem ảnh đầy đủ</span></a>'+
 '<figcaption><strong>'+a(shot.caption)+'</strong>'+
 '<div class="screen-source">'+a(shot.source)+' · '+(shot.kind==="public_demo"?"Website public":"Ảnh kiểm thử")+'</div>'+
