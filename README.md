@@ -32,3 +32,17 @@ Private/internal tools are presented at a conceptual level without links to inte
 ## Contacts
 - Zalo: 0942 591 888 (owner-provided public contact)
 - GitHub: https://github.com/hungtranbkit
+
+## Automatic daily project discovery
+
+GitHub Actions now runs **every day at 08:17 Vietnam time** (01:17 UTC), plus manual dispatch. It discovers qualified public repositories, adds case-study/demo routes, updates the sitemap, validates the site and publishes via GitHub Pages. Existing curated projects are left untouched; no duplicate slugs.
+
+**Private repos are never auto-publicized.** An owner-scoped read-only `PORTFOLIO_SYNC_TOKEN` and a per-repo `portfolio.public.json` containing `"publish":true` are both required. The README of a private repo is not copied or summarized.
+
+See [Daily sync runbook](docs/DAILY_SYNC.md) for setup, exclusion policy, the opt-in manifest, tests and manual run instructions.
+
+```bash
+python3 -m unittest discover -s scripts -p 'test_repo_sync.py' -v
+python3 scripts/sync_repos.py --owner hungtranbkit  # dry-run
+python3 scripts/sync_repos.py --owner hungtranbkit --apply
+```
