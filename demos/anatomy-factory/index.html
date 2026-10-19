@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anatomy × MESFlow — Interactive Factory Demo</title>
+<style>
+:root{color-scheme:dark;--bg:#0a101c;--panel:#111b2a;--line:#2d3e57;--ink:#eef6ff;--sub:#8ea5bf;--teal:#47dcc4;--amber:#ffbe70;--blue:#7c9cff;--red:#ff7380}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at 58% -20%,#213249 0%,#0b1424 38%,#080d17 85%);font:14px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif;min-height:100vh}button,input{font:inherit}
+.shell{max-width:1500px;margin:auto;padding:24px 28px 44px}.head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}.identity{display:flex;align-items:center;gap:13px}.mark{width:47px;height:47px;border:1px solid #416b78;border-radius:13px;background:linear-gradient(135deg,#204450,#142533);display:grid;place-items:center;color:#72ffdb;font-size:27px;font-weight:700;box-shadow:0 0 29px #43dcc41c}.eyebrow{color:#49e5c6;font-size:10px;font-weight:800;letter-spacing:.18em}.head h1{font-size:21px;letter-spacing:-.025em;margin:2px 0 0}.tag{display:flex;align-items:center;gap:8px;border:1px solid #35556a;padding:9px 13px;border-radius:99px;color:#d9eef8;background:#142637aa;font-size:12px;font-weight:700;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:#56eac6;box-shadow:0 0 10px #4be9c6}
+.lead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin:0 0 14px}.lead h2{margin:0;font-size:27px;letter-spacing:-.04em}.lead p{margin:0;color:#91a8c1}.layout{display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:15px;align-items:stretch}.viewer{position:relative;min-height:685px;border-radius:18px;overflow:hidden;border:1px solid #2b3e57;background:radial-gradient(ellipse at 52% 56%,#1b344b 0%,#101e31 39%,#0b1626 70%,#0a1422 100%);box-shadow:inset 0 1px #ffffff11,0 22px 70px #0003}.viewer:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff07 1px,transparent 1px),linear-gradient(90deg,#ffffff07 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(ellipse at center,#000 15%,transparent 73%);opacity:.65}.viewer svg{position:relative;display:block;width:100%;height:auto;aspect-ratio:1200 / 730;touch-action:pan-y;overflow:visible}.viewer:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 95px #08122088}
+.corner-label{position:absolute;left:21px;top:18px;font-size:11px;font-weight:800;color:#b6d1e6;letter-spacing:.12em}.corner-label small{font-weight:400;color:#68849e}.minihelp{position:absolute;bottom:20px;left:21px;color:#a5bdcf;font-size:11px;background:#101e2ccc;padding:9px 12px;border:1px solid #2c4157;border-radius:8px;max-width:calc(100% - 40px)}.stage-status{position:absolute;bottom:20px;right:20px;font-size:11px;color:#6bedcb;display:flex;align-items:center;gap:6px}.scene-hotspot{cursor:pointer;outline:none}.scene-hotspot:focus-visible{filter:drop-shadow(0 0 8px #74fff1)}
+.sidebar{display:flex;flex-direction:column;gap:14px}.panel{border:1px solid #2b3e57;border-radius:16px;background:linear-gradient(160deg,#172536e8,#101b2ae9);box-shadow:inset 0 1px #ffffff08;padding:18px}.panel h3{margin:0 0 13px;font-size:14px;letter-spacing:-.015em}.panel-label{color:#7293b0;text-transform:uppercase;font-size:10px;letter-spacing:.15em;font-weight:800;margin:0 0 7px}.station{display:flex;gap:11px;align-items:center;padding:12px 10px;border-radius:11px;border:1px solid transparent;background:transparent;color:inherit;width:100%;text-align:left;cursor:pointer}.station:hover{background:#23344a}.station.active{background:#203c48;border-color:#367469}.station-icon{display:grid;place-items:center;border-radius:9px;width:35px;height:35px;background:#2c4260;color:#d9f6fe;font-size:19px;flex-shrink:0}.station.active .station-icon{background:#1d5b58;color:#78f3dd}.station-title{font-size:13px;font-weight:750}.station-id{font-size:11px;color:#90a8ba}.tiny-status{margin-left:auto;width:7px;height:7px;border-radius:50%;background:#57dcc0;box-shadow:0 0 10px #56d9bc}.tiny-status.warn{background:#ffca77;box-shadow:0 0 9px #f5bc63}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#0c1a2b;border:1px solid #293d51;padding:12px;border-radius:10px}.metric b{display:block;font-size:23px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.metric span{font-size:10px;color:#8aa5bf}.detail{padding-top:5px}.detail h3{font-size:18px;margin-bottom:4px}.detail p{color:#a1b4c9;font-size:12px;margin:0 0 12px;min-height:36px}.progress{height:6px;border-radius:10px;background:#2b4151;overflow:hidden}.progress>i{display:block;height:100%;background:linear-gradient(90deg,#37c7b6,#76f5cc);border-radius:10px;transition:width .2s}.detail-footer{display:flex;justify-content:space-between;color:#91aabe;font-size:11px;margin-top:6px}
+.controls{display:flex;align-items:center;gap:9px;margin-top:14px;flex-wrap:wrap}.ctrl{border-radius:10px;border:1px solid #344c61;background:#22374b;color:#d8e9f6;padding:10px 13px;cursor:pointer;font-size:12px;font-weight:700}.ctrl:hover{background:#30495e}.ctrl.primary{background:#1b776e;border-color:#2cae9b;color:#e6fffa}.ctrl:focus-visible,.station:focus-visible{outline:2px solid #86f5e5;outline-offset:2px}.ctrl.active{border-color:#69c7b6;background:#1b5954}#run{flex:1}.speedline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px;font-size:12px;color:#adc3d3}.speedline input{width:118px;accent-color:#56dfc2}.foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:12px;color:#829cb2;font-size:12px}.foot a{color:#75e4cf;text-decoration:none}.foot span:last-child{text-align:right}
+@media(max-width:1000px){.layout{grid-template-columns:minmax(0,1fr)}.viewer{min-height:0}.sidebar{display:grid;grid-template-columns:1fr 1fr}.sidebar .panel:last-child{grid-column:span 2}.panel{padding:15px}}
+@media(max-width:600px){.shell{padding:15px 12px 26px}.head{align-items:flex-start}.mark{width:39px;height:39px;font-size:21px}.head h1{font-size:16px}.tag{font-size:10px;padding:7px 9px}.lead{display:block}.lead h2{font-size:23px}.lead p{font-size:12px}.viewer svg{min-height:320px}.viewer{border-radius:13px}.sidebar{grid-template-columns:1fr}.sidebar .panel:last-child{grid-column:span 1}.minihelp{bottom:10px;left:10px;font-size:9px;padding:6px 8px}.corner-label{font-size:9px;top:11px;left:12px}.stage-status{display:none}.foot{display:block}.foot span{display:block;margin:5px 0;text-align:left!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body><main class="shell">
+<header class="head"><div class="identity"><div class="mark" aria-hidden="true">◇</div><div><div class="eyebrow">ANATOMY × MESFLOW · LAB</div><h1>Factory Systems Explorer</h1></div></div><div class="tag"><span class="dot"></span>DEMO TƯƠNG TÁC</div></header>
+<div class="lead"><h2>Một xưởng nhỏ. Một thế giới đang hoạt động.</h2><p>Mô hình kỹ thuật isometric · SVG vector · Không dùng hình nền tĩnh</p></div>
+<div class="layout"><section class="viewer" aria-label="Mô hình nhà máy tương tác"><div class="corner-label">FIG 01 <small> / SMART MANUFACTURING CELL</small></div><svg id="scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 730" role="img" aria-label="Máy cắt CNC, robot gắp sản phẩm, băng chuyền và trạm kiểm định"><defs><linearGradient id="glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#8ef4e6" stop-opacity=".35"/><stop offset=".65" stop-color="#3ab9b5" stop-opacity=".11"/><stop offset="1" stop-color="#fff" stop-opacity=".03"/></linearGradient><linearGradient id="conveyor" x1="0" x2="1"><stop stop-color="#1e364b"/><stop offset=".5" stop-color="#47637b"/><stop offset="1" stop-color="#203a54"/></linearGradient><filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7"/></filter><filter id="shadow" x="-40%" y="-80%" width="200%" height="260%"><feGaussianBlur stdDeviation="10"/></filter></defs><g id="world" transform="translate(-245 -30) scale(1.35)"></g></svg><div class="minihelp">Chạm máy để chọn · 1–3 chọn OP · ← / → xoay góc nhìn</div><div class="stage-status"><span class="dot"></span>SIMULATION ACTIVE</div></section>
+<aside class="sidebar"><section class="panel"><div class="panel-label">Operation Navigator</div><h3>Chọn công đoạn</h3><div id="stations"></div></section>
+<section class="panel detail"><div class="panel-label">Thông số mô phỏng</div><h3 id="opName">OP-01 · Gia công CNC</h3><p id="opDesc">Máy gia công cơ khí có trục chính chuyển động.</p><div class="metrics"><div class="metric"><b id="completed">128</b><span>Thành phẩm / ca</span></div><div class="metric"><b id="cycle">18.2s</b><span>Chu kỳ dự kiến</span></div><div class="metric"><b id="util">84%</b><span>Hiệu suất mô phỏng</span></div><div class="metric"><b id="current">RUN</b><span>Trạng thái máy</span></div></div><div style="margin-top:16px"><div class="panel-label">Tiến độ mô phỏng</div><div class="progress"><i id="bar" style="width:64%"></i></div><div class="detail-footer"><span id="statusText">Đang gia công</span><span id="pct">64%</span></div></div></section>
+<section class="panel"><div class="panel-label">Simulation Controls</div><h3>Điều khiển mô hình</h3><div class="controls"><button class="ctrl primary" id="run" type="button">Ⅱ Tạm dừng</button><button class="ctrl" id="explode" type="button" aria-pressed="false">↗ Tách lớp</button><button class="ctrl" id="rotate" type="button">⟳ Xoay</button></div><div class="speedline"><label for="speed">Tốc độ mô phỏng</label><input id="speed" aria-label="Tốc độ mô phỏng" type="range" min="0.25" max="3" step="0.25" value="1"><b id="speedOut">1.0×</b></div></section></aside></div>
+<footer class="foot"><span>Demo kỹ thuật độc lập · Dữ liệu giả lập, không kết nối MESFlow production</span><span>Inspired by <a href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener noreferrer">wheresryan22/anatomy</a> (MIT)</span></footer></main>
+<script>
+(()=>{'use strict';
+const SVG='http://www.w3.org/2000/svg',world=document.getElementById('world');
+const defs=[{id:'OP-01',icon:'⌘',name:'Gia công CNC',description:'Trục chính di chuyển trên bàn gá; máy được che bằng tấm kính bảo vệ.',completed:128,cycle:18.2,eff:84},{id:'OP-02',icon:'⚙',name:'Robot / Băng chuyền',description:'Robot gắp phôi từ CNC sang băng chuyền, vận chuyển tới khu kiểm tra.',completed:119,cycle:12.4,eff:91},{id:'OP-03',icon:'◉',name:'Kiểm định QC',description:'Cảm biến kiểm tra kích thước và xác nhận thành phẩm đầu ra.',completed:116,cycle:9.8,eff:97}];
+const state={selected:1,playing:true,t:0,last:0,speed:1,rot:0,explode:false};
+const stationParent=document.getElementById('stations');
+function el(tag,props={},children=''){let x=document.createElementNS(SVG,tag);for(let [k,v] of Object.entries(props))x.setAttribute(k,v);x.innerHTML=children;return x;}
+function p(x,y,z=0){let a=(45+state.rot)*Math.PI/180,ca=Math.cos(a)*1.41,sa=Math.sin(a)*1.41;return [595+x*ca-y*sa,148+(x*sa+y*ca)*.49-z*1.37]}
+function points(coords){return coords.map(c=>p(...c).map(v=>v.toFixed(1)).join(',')).join(' ')}
+let items=[],rank=0;function add(tag,attrs={},inner='',key=0){items.push({key:key*10000+(rank++),markup:el(tag,attrs,inner).outerHTML})}
+function poly(v,color,stroke='#40546c',sw=1,extra={}){add('polygon',{points:points(v),fill:color,stroke,'stroke-width':sw,'stroke-linejoin':'round',...extra},'',avg(v))}
+function avg(v){return v.reduce((a,q)=>a+q[0]+q[1]+q[2],0)/v.length}
+function box(x,y,z,w,d,h,colors=['#57728b','#253c58','#344f6b'],alpha=1){let ex=state.explode?(Math.abs(x-180)*.11+2):0;z+=ex;let t=[[x,y,z+h],[x+w,y,z+h],[x+w,y+d,z+h],[x,y+d,z+h]],f=[[x,y+d,z],[x+w,y+d,z],[x+w,y+d,z+h],[x,y+d,z+h]],r=[[x+w,y,z],[x+w,y+d,z],[x+w,y+d,z+h],[x+w,y,z+h]];let key=x+y+z;poly(f,colors[1],'#13273b',1,{opacity:alpha});poly(r,colors[2],'#1a3249',1,{opacity:alpha});poly(t,colors[0],'#647f99',.9,{opacity:alpha});}
+function line(v,color='#8eacc1',width=1,opacity=1,dash=''){add('polyline',{points:points(v),fill:'none',stroke:color,'stroke-width':width,opacity,'stroke-linecap':'round','stroke-dasharray':dash},'',avg(v)+.5)}
+function dot(x,y,z,r=3,color='#86ddce',opacity=1){let [cx,cy]=p(x,y,z);add('circle',{cx,cy,r,fill:color,opacity},'',x+y+z+1)}
+function ellipse(x,y,z,rX,rY,fill,stroke='none',width=1){let [cx,cy]=p(x,y,z);add('ellipse',{cx,cy,rx:rX,ry:rY,fill,stroke,'stroke-width':width},'',x+y+z)}
+function txt(s,x,y,z,fill='#cfe2f1',size=10,weight=700){let [px,py]=p(x,y,z);add('text',{x:px,y:py,fill,'font-family':'system-ui,-apple-system,Segoe UI,sans-serif','font-size':size,'font-weight':weight,'text-anchor':'middle','pointer-events':'none'},s,x+y+z+2)}
+function cyl(x,y,z,r,h,fill='#607c95'){ellipse(x,y,z,r*1.37,r*.55,'#172d44','#6b849c',1);box(x-r*.7,y-r*.7,z,r*1.4,r*1.4,h,[fill,'#283f57','#45647f']);ellipse(x,y,z+h,r*1.37,r*.55,fill,'#b5d2e0',1.1);}
+function bolts(x,y,z,w,d){for(let [xx,yy] of [[x+3,y+3],[x+w-3,y+3],[x+w-3,y+d-3],[x+3,y+d-3]])dot(xx,yy,z,.95,'#d5e8e6')}
+function floor(){let x=17,y=13,w=398,d=270;ellipse(216,149,-27,415,118,'#00000055');box(x,y,-10,w,d,12,['#213b50','#13263b','#1a3046']);poly([[x+7,y+7,3],[x+w-7,y+7,3],[x+w-7,y+d-7,3],[x+7,y+d-7,3]],'#192c43','#50687f',1);
+for(let gx=35;gx<x+w;gx+=20)line([[gx,y+7,3],[gx,y+d-7,3]],'#315067',.7,.37);for(let gy=35;gy<y+d;gy+=20)line([[x+7,gy,3],[x+w-7,gy,3]],'#315067',.7,.37);
+for(let i=0;i<19;i++){let b=x+10+i*20;poly([[b,y+7,3.5],[b+7,y+7,3.5],[b+17,y+17,3.5],[b+10,y+17,3.5]],i%2?'#e6a94d':'#29445b','none',0,{opacity:.8})}
+for(let i=0;i<10;i++){let b=x+12+i*35;poly([[b,y+d-17,3.5],[b+12,y+d-17,3.5],[b+25,y+d-4,3.5],[b+13,y+d-4,3.5]],'#dda45a','none',0,{opacity:.61})}
+}
+function cnc(){const a=state.explode?8:0,x=39,y=39;box(x,y,3,108,86,11,['#4c637b','#203750','#34506b']);bolts(x,y,15,108,86);
+for(let xx of [x+6,x+102])for(let yy of [y+7,y+79])box(xx-2,yy-2,14,5,5,78,['#8898ae','#26394d','#405a74']);
+box(x+4,y+4,15,100,80,7,['#4a7087','#36516b','#436480']);
+box(x+18,y+16,24,64,47,5,['#38506a','#20334c','#284560']);
+for(let q=0;q<11;q++)line([[x+20+q*5.9,y+18,29],[x+20+q*5.9,y+59,29]],'#7d9db0',.95,.86);
+// transparent housing + frame (solid slatted metal)
+for(let yy of [y+3,y+78])box(x+4,yy,24,100,5,76,['#6b879c','#264158','#3d5e79']);
+for(let xx of [x+3,x+100])box(xx,y+4,24,6,74,76,['#69859e','#2a455f','#41617d']);
+box(x+3,y+3,100+a,102,80,7,['#92a8b8','#314f6a','#5f7d95']);
+// roof vents, bolts and light strip
+for(let i=0;i<8;i++)line([[x+27+i*6,y+14,107+a],[x+27+i*6,y+30,107+a]],'#223e53',1.4,.88);
+for(let i=0;i<5;i++)dot(x+8+i*22,y+8,108+a,1.5,'#e9eff3');
+// spindle gantry and moving cutting head
+let z=55+Math.sin(state.t*2)*10;box(x+20,y+18,47,65,7,12,['#7290a6','#2c4961','#53758b']);
+cyl(x+55,y+40,z-3,7,24,'#afbbc8');cyl(x+55,y+40,z-13,3,9,'#ffbc70');dot(x+55,y+40,z-13,5,'#ffd58f',.17);for(let i=0;i<11;i++){let xx=x+45+i*2,zz=z-12+Math.sin(i*.9+state.t*4)*3;dot(xx,y+40,zz,.9,'#ffb56f',.6)}
+// front glass and frame highlight
+poly([[x+12,y+85,24],[x+94,y+85,24],[x+94,y+85,92],[x+12,y+85,92]],'url(#glass)','#62bfb7',1.1,{opacity:.62});
+line([[x+16,y+85,90],[x+48,y+85,90]],'#b5e7eb',1,.7);
+box(x+103,y+4,42,9,22,43,['#506e81','#2d445d','#56768d']);txt('CNC',x+108,y+30,78,'#e0fcf5',9);
+for(let k=0;k<4;k++)dot(x+108,y+27,69-k*5,1.5,k===0?'#70f4c9':'#e1a86e');
+labelPlate('OP-01',x+55,y+88,19,state.selected===0);}
+function labelPlate(s,x,y,z,hot){ellipse(x,y,z-4,34,8,hot?'#64e8d050':'#0000');txt(s,x,y,z,hot?'#77fce1':'#b5c9dc',12,800)}
+function conveyor(){let x=87,y=167;box(x,y,12,263,44,10,['#55718b','#233a50','#35556f']);
+for(let q=0;q<13;q++){let px=x+8+q*20;line([[px,y+3,22.2],[px,y+40,22.2]],'#7e9ab2',3,.78);line([[px+2,y+3,22.2],[px+2,y+40,22.2]],'#2a4b64',1,.8)}
+box(x+4,y+4,23,255,36,4,['url(#conveyor)','#1a2b40','#23445c']);
+for(let q=0;q<15;q++){let px=x+6+q*17;line([[px,y+5,27.5],[px,y+39,27.5]],'#7f9bb8',1,.36)}
+for(let xx of [x+14,x+90,x+178,x+247])for(let yy of [y+8,y+35]){box(xx,yy,0,5,5,14,['#7c96aa','#263e54','#446680']);dot(xx+2.5,yy+2.5,14,.9,'#dae6ee')}
+for(let side of [y-2,y+44]){box(x,side,20,264,4,8,['#a0b7c5','#344e65','#51728b']);for(let q=0;q<22;q++)dot(x+7+q*12,side+2,29,.9,'#e2e8e8')}
+// moving product cartons, dynamics tied to time
+for(let i=0;i<4;i++){let pos=state.playing?((i*72+state.t*27)%252):(i*72+state.t*27)%252;let bx=x+pos,by=y+8+(i%2)*5;box(bx,by,28,17,18,11,['#d7ae7d','#956b48','#b98755']);line([[bx+9,by,39.2],[bx+9,by+18,39.2]],'#ffe0b0',1,.65);line([[bx,by+8,39.2],[bx+17,by+8,39.2]],'#8c6545',.8,.6);}
+// scanner arch mounted over conveyor near right
+for(let k=0;k<2;k++)box(316,y+4+k*30,30,5,5,48,['#6f8ba4','#23425c','#365a75']);box(315,y+4,76,8,38,5,['#6b879d','#294359','#466582']);
+line([[319,y+7,75],[319,y+40,75]],'#83fbdf',3,.84);
+for(let q=0;q<15;q++){let xx=x+q*18,yy=y+44;dot(xx,yy,33,1.25,Math.sin(state.t*2+q)>.2?'#52daca':'#326a70')}
+labelPlate('TRANSFER',x+195,y+57,20,state.selected===1);}
+function segment(a,b,r,col){let vx=b[0]-a[0],vy=b[1]-a[1],l=Math.hypot(vx,vy)||1,dx=-vy/l*r,dy=vx/l*r;let pnts=[[a[0]+dx,a[1]+dy,a[2]],[b[0]+dx,b[1]+dy,b[2]],[b[0]-dx,b[1]-dy,b[2]],[a[0]-dx,a[1]-dy,a[2]]];poly(pnts,col,'#94aec3',1);line([a,b],'#a7cbd8',1.8,.95);}
+function arm(){let x=205,y=116;box(x-20,y-20,5,40,40,12,['#607a92','#28425b','#3e5f76']);bolts(x-20,y-20,17,40,40);cyl(x,y,17,19,13,'#b3a89e');cyl(x,y,30,12,15,'#eea55b');
+let phase=state.t*1.7,targetX=x+29+Math.sin(phase)*15,targetY=y+8+Math.cos(phase*.8)*16;
+let shoulder=[x,y,71],elbow=[x+25,y-6,103+8*Math.sin(phase)],hand=[targetX,targetY,66+12*Math.sin(phase+.7)];
+cyl(x,y,43,8,19,'#da9b62');segment(shoulder,elbow,8,'#f7b66b');segment(elbow,hand,7,'#f0a45f');
+for(let c of [shoulder,elbow,hand]){ellipse(c[0],c[1],c[2],10,7,'#d3dce1','#334d66',1);dot(c[0],c[1],c[2],3.5,'#e4ad71')}
+cyl(hand[0],hand[1],hand[2]-15,4,13,'#607d92');segment([hand[0]-8,hand[1],hand[2]-16],[hand[0]-8,hand[1],hand[2]-27],2,'#cfe4ed');segment([hand[0]+8,hand[1],hand[2]-16],[hand[0]+8,hand[1],hand[2]-27],2,'#cfe4ed');
+line([[x+1,y+8,43],[x+4,y+4,62],[x+16,y-3,85],[elbow[0],elbow[1],elbow[2]]],'#302e34',3,1);txt('R2',x+20,y-14,16,'#fecb80',10,800);}
+function qc(){let x=288,y=42,z=3;box(x,y,z,103,85,12,['#415d75','#263c54','#304b67']);bolts(x,y,15,103,85);
+for(let xx of [x+8,x+95])for(let yy of [y+8,y+77])box(xx-3,yy-3,16,7,7,65,['#8ba0ad','#293f57','#486b82']);
+box(x+5,y+6,79,94,75,7,['#8b9fb2','#324f67','#617d8e']);
+box(x+24,y+16,24,57,45,6,['#29485e','#172e45','#325168']);
+for(let q=0;q<7;q++)line([[x+27,y+17+q*6,30],[x+79,y+17+q*6,30]],'#547b90',1,.8);
+box(x+22,y+10,38,62,6,38,['#7395a6','#263f5a','#476b80']);
+// inspection sensor
+cyl(x+52,y+42,41,7,30,'#afc8cb');cyl(x+52,y+42,33,4,8,'#8be7dd');dot(x+52,y+42,29,6,'#6af7dd',.42);
+// translucent front enclosure
+poly([[x+6,y+83,17],[x+97,y+83,17],[x+97,y+83,79],[x+6,y+83,79]],'url(#glass)','#6cb9c6',1,{opacity:.65});
+for(let i=0;i<9;i++)line([[x+11+i*9,y+82.9,20],[x+11+i*9,y+82.9,76]],'#b3e2e6',.8,.08);
+box(x+105,y+13,32,8,26,36,['#607e93','#283e56','#496b86']);dot(x+110,y+41,57,3,'#5ce8ba');dot(x+110,y+41,47,2,'#efb778');
+labelPlate('OP-03',x+53,y+90,18,state.selected===2);}
+function lighting(){let [lx,ly]=p(228,142,16);add('ellipse',{cx:lx,cy:ly,rx:90,ry:44,fill:'#6bedc5',opacity:'.05',filter:'url(#glow)'},'',99999);}
+function selectedHighlight(){let targets=[[95,89,112],[207,117,126],[344,81,98]];let [x,y,z]=targets[state.selected];let [sx,sy]=p(x,y,z);add('circle',{cx:sx,cy:sy,r:13,fill:'none',stroke:'#64f9d7','stroke-width':1.8,opacity:.95},'',999999);add('circle',{cx:sx,cy:sy,r:21,fill:'none',stroke:'#64f9d7','stroke-width':1.3,'stroke-dasharray':'3 6',opacity:.5},'',999999);}
+function stationClickTargets(){for(let i=0;i<3;i++){let [x,y,z,w,d,h]=[[38,35,4,110,92,116],[171,98,1,84,70,115],[286,38,4,108,95,96]][i];let v=[[x,y,z],[x+w,y,z],[x+w,y+d,z],[x,y+d,z]];let arr=v.map(q=>p(...q));let minx=Math.min(...arr.map(a=>a[0])),maxx=Math.max(...arr.map(a=>a[0])),miny=Math.min(...arr.map(a=>a[1]))-h*1.37,maxy=Math.max(...arr.map(a=>a[1]));add('rect',{x:minx-8,y:miny-8,width:maxx-minx+16,height:maxy-miny+16,fill:'transparent',class:'scene-hotspot',role:'button',tabindex:0,'data-op':i,'aria-label':'Chọn công đoạn '+defs[i].name},'',1000000+i)}}
+function draw(){rank=0;items=[];floor();cnc();arm();conveyor();qc();lighting();selectedHighlight();stationClickTargets();items.sort((a,b)=>a.key-b.key);world.innerHTML=items.map(v=>v.markup).join('');world.querySelectorAll('[data-op]').forEach(e=>{e.addEventListener('click',()=>select(+e.dataset.op));e.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(+e.dataset.op)}})});}
+function select(i){state.selected=(i+3)%3;stationParent.querySelectorAll('[data-station]').forEach(b=>{let active=+b.dataset.station===state.selected;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});update();draw()}
+for(let i=0;i<3;i++){let d=defs[i];let b=document.createElement('button');b.className='station'+(state.selected===i?' active':'');b.dataset.station=i;b.type='button';b.setAttribute('aria-pressed',state.selected===i);b.innerHTML=`<span class="station-icon">${d.icon}</span><span><span class="station-title">${d.name}</span><br><span class="station-id">${d.id} · ${i===2?'Kiểm tra':'Đang chạy'}</span></span><span class="tiny-status ${i===2?'warn':''}"></span>`;b.addEventListener('click',()=>select(i));stationParent.append(b)}
+function update(){let d=defs[state.selected],phase=(state.t*d.eff/110)%100;document.getElementById('opName').textContent=d.id+' · '+d.name;document.getElementById('opDesc').textContent=d.description;document.getElementById('completed').textContent=d.completed+Math.floor(state.t/[18.2,12.4,9.8][state.selected]);document.getElementById('cycle').textContent=d.cycle.toFixed(1)+'s';document.getElementById('util').textContent=d.eff+'%';document.getElementById('current').textContent=state.playing?'RUN':'STOP';document.getElementById('current').style.color=state.playing?'#71f0d1':'#ffb981';document.getElementById('bar').style.width=Math.round(phase)+'%';document.getElementById('pct').textContent=Math.round(phase)+'%';document.getElementById('statusText').textContent=state.playing?'Đang mô phỏng':'Đã tạm dừng'}
+const run=document.getElementById('run');run.onclick=()=>{state.playing=!state.playing;run.textContent=state.playing?'Ⅱ Tạm dừng':'▶ Tiếp tục';run.classList.toggle('primary',state.playing);update()};
+document.getElementById('explode').onclick=(e)=>{state.explode=!state.explode;e.currentTarget.classList.toggle('active',state.explode);e.currentTarget.setAttribute('aria-pressed',String(state.explode));draw()};
+document.getElementById('rotate').onclick=()=>{state.rot=state.rot>=20?-20:state.rot+10;draw()};
+document.getElementById('speed').oninput=e=>{state.speed=+e.target.value;document.getElementById('speedOut').textContent=state.speed.toFixed(2).replace(/0$/,'')+'×'};
+document.addEventListener('keydown',e=>{if(e.target.matches('input,button'))return;if(['1','2','3'].includes(e.key))select(+e.key-1);if(e.key==='ArrowRight'){state.rot=Math.min(30,state.rot+5);draw()}if(e.key==='ArrowLeft'){state.rot=Math.max(-30,state.rot-5);draw()}});
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let accumulator=0,updates=0;function tick(now){if(!state.last)state.last=now;let delta=Math.min((now-state.last)/1000,.12);state.last=now;if(state.playing&&!reduced){state.t+=delta*state.speed;accumulator+=delta;updates+=delta;if(accumulator>=.14){accumulator=0;draw()}if(updates>=.3){updates=0;update()}}requestAnimationFrame(tick)}draw();update();requestAnimationFrame(tick);
+})();
+</script></body></html>
