@@ -965,5 +965,34 @@
     ],
     "sourceUrl": "https://github.com/hungtranbkit/terminal-mcp",
     "screenshots": []
+  },
+  {
+    "slug": "so-tro-landing",
+    "name": "Sổ Trọ — public landing and safe demo entry",
+    "categoryLabel": "Công cụ",
+    "category": "tools",
+    "phase": "development",
+    "phaseLabel": "Đang phát triển",
+    "tagline": "Public Sổ Trọ feature landing and calculator demonstration",
+    "description": "Public Sổ Trọ feature landing and calculator demonstration",
+    "website": "",
+    "featured": false,
+    "visual": "ST—P",
+    "sample": "Tác vụ kỹ thuật · dữ liệu mẫu",
+    "steps": [
+      "Tạo tác vụ thử nghiệm",
+      "Thiết lập các thông số",
+      "Chạy quy trình mô phỏng",
+      "Xem nhật ký và kết quả"
+    ],
+    "capabilities": [
+      "Công cụ hỗ trợ kỹ thuật",
+      "Tổ chức luồng thao tác",
+      "Theo dõi trạng thái và kết quả"
+    ],
+    "stack": [
+      "Next.js"
+    ],
+    "sourceUrl": "https://github.com/hungtranbkit/so-tro-landing"
   }
 ]
